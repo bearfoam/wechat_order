@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password:
+    url: jdbc:mysql://localhost/linyi?characterEncoding=utf-8&useSSL=true
+  jpa:
+    show-sql: true
+  jackson:
+    default-property-inclusion: non_null
+
+server:
+  context-path: /sell
+
+wechat:
+  mpAppId: wxa34382ffeb717c91
+  mpAppSecret: 4dbd093b2f5f83d8d9f91dc0881f446b
+  mchId: 1409146202
+  mchKey: c976503d34ca432c601361f969fd8d85
+  keyPath: /var/weixin_cert/h5.p12
+  notifyUrl: http://lyowner.natapp1.cc/sell/pay/notify

@@ -85,4 +85,15 @@ public class OrderServiceImplTest {
         OrderDTO result =  orderService.paid(orderDTO);
         Assert.assertEquals(result.getPayStatus(),PayStatusEnum.SUCCESS.getCode());
     }
+
+    @Test
+    public void findAllList() throws Exception{
+        PageRequest pageRequest = new PageRequest(1,5);
+
+        Page<OrderDTO> orderDTOPage=orderService.findAllList(pageRequest);
+        Assert.assertNotEquals(0,orderDTOPage.getTotalElements());
+
+
+    }
+
 }

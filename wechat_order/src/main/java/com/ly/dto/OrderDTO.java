@@ -1,8 +1,10 @@
 package com.ly.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ly.dataproject.OrderDetail;
 import com.ly.enums.OrderStatusEnum;
 import com.ly.enums.PayStatusEnum;
+import com.ly.utils.EnumUtil;
 import lombok.Data;
 
 import javax.persistence.Id;
@@ -49,5 +51,14 @@ public class OrderDTO {
 
     //商品集合
     private List<OrderDetail> orderDetailList;
+
+    @JsonIgnore  //该注解可以在转化为json对象输出的时候忽略这个字段
+    public OrderStatusEnum getOrderStatusEnum(){
+        return EnumUtil.getByCode(orderStatus,OrderStatusEnum.class);
+    }
+    @JsonIgnore
+    public PayStatusEnum getPayStatusEnum(){
+        return EnumUtil.getByCode(payStatus,PayStatusEnum.class);
+    }
 
 }

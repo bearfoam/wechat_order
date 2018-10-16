@@ -78,12 +78,20 @@ public class SellerOrderController {
 
     }
     @GetMapping("/finish")
-    public ModelAndView orderFinish(OrderDTO orderDTO,Map<String,Object> map){
+    public ModelAndView orderFinish(@RequestParam("orderId") String orderId,Map<String,Object> map){
+        try {
+            OrderDTO orderDTO =  orderService.findOne(orderId);
             orderService.finish(orderDTO);
-            map.put("msg",ResultEnum.FINISH_ORDER_SUCCESS.getMessage());
 
-            return return new ModelAndView("common/success",map);
-
+        }catch (SellException e){
+            log.error("【卖家端完结订单】 订单状态异常{}",e);
+            map.put("msg",e.getMessage());
+            map.put("url","/sell/seller/order/list");
+            return new ModelAndView("common/error",map);
+        }
+        map.put("msg",ResultEnum.FINISH_ORDER_SUCCESS.getMessage());
+        map.put("url","/sell/seller/order/list");
+        return new ModelAndView("common/success",map);
     }
 
 

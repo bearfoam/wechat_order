@@ -22,7 +22,12 @@ public enum ResultEnum {
     WECHAT_MP_ERROR(20,"微信公众号方面错误"),
     WXPAY_NOTIFY_MONEY_VERIFY_ERROR(21,"微信支付异步通知金额验证不通过"),
     CANCEL_SUCCESS(22,"订单取消成功"),
-    FINISH_ORDER_SUCCESS(23,"订单完结成功")
+    FINISH_ORDER_SUCCESS(23,"订单完结成功"),
+    PRODUCT_STATUS_ERROR(24,"商品状态错误"),
+    PRODUCT_ONSALE_SUCCESS(25,"商品上架成功"),
+    PRODUCT_OFFSALE_SUCCESS(26,"商品下架成功")
+
+
 
     ;
 

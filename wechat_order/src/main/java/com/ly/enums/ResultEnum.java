@@ -25,7 +25,10 @@ public enum ResultEnum {
     FINISH_ORDER_SUCCESS(23,"订单完结成功"),
     PRODUCT_STATUS_ERROR(24,"商品状态错误"),
     PRODUCT_ONSALE_SUCCESS(25,"商品上架成功"),
-    PRODUCT_OFFSALE_SUCCESS(26,"商品下架成功")
+    PRODUCT_OFFSALE_SUCCESS(26,"商品下架成功"),
+    CATEGORY_SAVE_SUCCESS(27,"类目修改成功"),
+    CATEGORY_ADD_SUCCESS(28,"类目新增成功"),
+    CATEGORY_EXIST(29,"类目已存在")
 
 
 

@@ -59,4 +59,10 @@ public class ProductCategoryRepositoryTest {
         Assert.assertNotEquals(0,result.size());
     }
 
+    @Test
+    public void find(){
+        ProductCategory productCategory =repository.findProductCategoryByCategoryName("女生最爱");
+        System.out.println(productCategory.toString());
+    }
+
 }

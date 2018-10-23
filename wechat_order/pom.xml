@@ -56,6 +56,7 @@
             <artifactId>gson</artifactId>
         </dependency>
 
+        <!-- 微信公众账号授权依赖-->
         <dependency>
             <groupId>com.github.binarywang</groupId>
             <artifactId>weixin-java-mp</artifactId>

@@ -12,13 +12,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class ProductServiceImpl implements ProductService {
    @Autowired
     private ProductInfoRepository productInfoRepository;
-
 
     @Override
     public ProductInfo findOne(String productId) {
